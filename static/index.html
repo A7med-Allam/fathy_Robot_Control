@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fathy Robot Control System</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <link rel="icon" href="/static/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>🤖 FATHY ROBOT CONTROL</h1>
+            <div class="status-bar">
+                <div class="status-item">
+                    <span class="status-label">Battery:</span>
+                    <span class="status-value" id="battery-level">85%</span>
+                </div>
+                <div class="status-item">
+                    <span class="status-label">Status:</span>
+                    <span class="status-value" id="connection-status">Connected</span>
+                </div>
+                <div class="status-item">
+                    <span class="status-label">Activity:</span>
+                    <span class="status-value" id="current-activity">Idle</span>
+                </div>
+            </div>
+        </header>
+
+        <main class="main-interface">
+            <div class="control-grid">
+
+                <div class="function-card" id="shake-hand-card">
+                    <div class="card-icon">🤝</div>
+                    <h3 class="card-title">Shake Fathy Hand</h3>
+                    <p class="card-description">Initiate friendly handshake gesture</p>
+                    <button class="function-btn" id="shake-hand-btn" data-function="shake_hand">
+                        <span class="btn-text">Shake Hand</span>
+                        <span class="btn-loader" style="display: none;">⏳</span>
+                    </button>
+                    <div class="card-status">
+                        <span class="status-indicator" id="shake-status">●</span>
+                        <span class="status-text" id="shake-text">Ready</span>
+                    </div>
+                </div>
+
+                <div class="function-card" id="talk-card">
+                    <div class="card-icon">💬</div>
+                    <h3 class="card-title">Talk to Fathy</h3>
+                    <p class="card-description">Voice interaction and conversation</p>
+
+                    <div class="language-options">
+                        <div class="lang-group">
+                            <label class="lang-label">Language:</label>
+                            <div class="language-button-group" id="input-lang-group">
+                                <button class="lang-btn active" data-lang="English">English</button>
+                                <button class="lang-btn" data-lang="Arabic">Arabic</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="function-btn" id="talk-btn" data-function="talk_to_fathy">
+                        <span class="btn-text">Start Talking</span>
+                        <span class="btn-loader" style="display: none;">🎤</span>
+                    </button>
+                    <div class="card-status">
+                        <span class="status-indicator" id="talk-status">●</span>
+                        <span class="status-text" id="talk-text">Ready</span>
+                    </div>
+                </div>
+
+                <div class="function-card" id="heart-card">
+                    <div class="card-icon">❤️</div>
+                    <h3 class="card-title">Heart Inspection</h3>
+                    <p class="card-description">Health monitoring and vital signs</p>
+                    <button class="function-btn" id="heart-btn" data-function="heart_inspection">
+                        <span class="btn-text">Start Inspection</span>
+                        <span class="btn-loader" style="display: none;">📊</span>
+                    </button>
+                    <div class="card-status">
+                        <span class="status-indicator" id="heart-status">●</span>
+                        <span class="status-text" id="heart-text">Ready</span>
+                    </div>
+                </div>
+
+                <div class="function-card" id="tour-card">
+                    <div class="card-icon">🚶</div>
+                    <h3 class="card-title">Basic Tour</h3>
+                    <p class="card-description">Guided navigation and exploration</p>
+                    <button class="function-btn" id="tour-btn" data-function="basic_tour">
+                        <span class="btn-text">Start Tour</span>
+                        <span class="btn-loader" style="display: none;">🗺️</span>
+                    </button>
+                    <div class="card-status">
+                        <span class="status-indicator" id="tour-status">●</span>
+                        <span class="status-text" id="tour-text">Ready</span>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+
+
+        <div class="response-display" id="response-display" style="display: none;">
+            <div class="response-content">
+                <div class="response-header">
+                    <h4>Response</h4>
+                    <button class="close-btn" id="close-response">×</button>
+                </div>
+                <div class="response-body" id="response-body">
+                    </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="loading-overlay" id="loading-overlay" style="display: none;">
+        <div class="loading-content">
+            <div class="loading-spinner"></div>
+            <p class="loading-text">Processing...</p>
+        </div>
+    </div>
+
+    <script src="/static/js/app.js"></script>
+</body>
+</html>
